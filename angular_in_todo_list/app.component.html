@@ -1,0 +1,9 @@
+<app-header></app-header>
+<h1>jay shree shyam <h1>
+  <input type="text" name="task" #task>
+  <br />
+  <button (click)="addtask(task.value)"> Submit</button>
+  <ul *ngFor="let item of list">
+    <li>{{item.name}}</li><button (click)="Removeitem(item.id)"> Remove</button>
+
+  </ul>
