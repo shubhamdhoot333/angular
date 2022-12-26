@@ -1,0 +1,21 @@
+<!-- <app-header></app-header> -->
+<h1>jay shree shyam <h1>
+    <br />
+
+    <!--template driven form-->
+<!-- <form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm.value)">
+<input type="text" name="name" placeholder="Enter name value" ngModel>  
+<br /> 
+<input type="text" name="password" placeholder="Enter password" ngModel>  
+<br />
+<button>Submit Here</button> 
+</form> -->
+
+<!--reactive form-->
+<form  [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <input type="text" name="user"  placeholder="Enter name value" formControlName="user">  
+    <br /> 
+    <input type="text" name="password" placeholder="Enter password" formControlName="password">  
+    <br />
+    <button>Submit Here</button> 
+    </form>
