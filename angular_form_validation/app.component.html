@@ -1,0 +1,30 @@
+<!-- <app-header></app-header> -->
+<h1>jay shree shyam <h1>
+    <a routerLink=""> home</a>
+    <a routerLink="about"> About</a>
+    <a routerLink="contact"> Contact</a>
+    <router-outlet> </router-outlet>
+    <br />
+
+    <!--template driven form-->
+<!-- <form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm.value)">
+<input type="text" name="name" placeholder="Enter name value" ngModel>  
+<br /> 
+<input type="text" name="password" placeholder="Enter password" ngModel>  
+<br />
+<button>Submit Here</button> 
+</form> -->
+
+<!--reactive form-->
+<form  [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <input type="text" name="user"  placeholder="Enter name value" formControlName="user">  
+    <br /> 
+    <span style="color:red" *ngIf="user && user.invalid && user.touched"> This field is not valied</span>
+    <br>
+
+    <input type="text" name="password" placeholder="Enter password" formControlName="password">  
+    <br />
+    <span style="color:red" *ngIf="password && password.invalid && password.touched"> This field is not valied</span>
+    <br>
+    <button [disabled]="loginForm.invalid">Submit Here</button> 
+    </form>
